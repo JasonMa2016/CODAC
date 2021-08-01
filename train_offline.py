@@ -1,4 +1,5 @@
 import argparse
+import json 
 import os
 from d4rl.infos import REF_MIN_SCORE, REF_MAX_SCORE
 
@@ -151,9 +152,19 @@ def main():
     # Initial environment
     args.num_epoch = 1000
     args.entropy_tuning = False
+
+    # Load config from config file
+    try:
+        config = json.load(open('configs/d4rl_configs.json', 'r'))[args.env]
+        args.min_z_weight = config['min_z_weight']
+        args.lag = config['lag']
+        args.actor_lr = config['actor_lr']
+        args.entropy = config['entropy']
+    except:
+        pass 
+
     if args.entropy == "true":
         args.entropy_tuning = True
-
     args.adapt = False
     args.d4rl = False
     if args.env == "riskymass":
@@ -180,12 +191,7 @@ def main():
         args.dataset = dataset_name
     else:
         env_type, dataset_type = args.env.split('-')[0], args.env.split('-')[-2]
-        if dataset_type == 'all':
-            env, dataset = combine_d4rl_dataset(env_type)
-        else:
-            env, dataset = load_d4rl_dataset(args.env)
-        if 'medium-replay' in args.env:
-            args.entropy_tuning = True
+        env, dataset = load_d4rl_dataset(args.env)
         args.dataset = args.env
         args.d4rl = True
 

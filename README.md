@@ -16,6 +16,18 @@ pip install gym==1.7.2
 pip install d4rl
  ```
 ## Experiments
+
+### Example Training Curves 
+You can find example training curves for this project [here](https://wandb.ai/jma2020/codac/reports/CODAC-Example-Training-Curves--Vmlldzo4OTY3NzY?accessToken=2tg99txc5lgcpayg5bfe3awcqpuc04e4f43v6hkni92xom9ar9ddwwf6778l89hv). 
+
+### D4RL
+D4RL experiments can be ran directly as the dataset is public. For example,
+```
+python train_offline.py --env hopper-medium-replay-v0 
+```
+The hyperparameters are automatically loaded from the config folder.
+
+
 ### Risky Ant, PointMass
 First, we need to generate the dataset used in the paper. For Ant, run:
 ```
@@ -30,12 +42,6 @@ The above commands will run CODAC online (without penalty) to collect trajectori
 Then, we can train CODAC offline using these datasets. For example, 
 ```
 python train_offline.py --env AntObstacle-v0 --risk_prob 0.95 --risk_penalty 90 --algo codac --risk_type cvar --entropy true --dist_penalty_type uniform --min_z_weight 0.1 --lag 10.0 --dataset_epoch 5000 --seed 0
-```
-
-### D4RL
-D4RL experiments can be ran directly as the dataset is public. For example,
-```
-python train_offline.py --env hopper-medium-replay-v0 --algo codac --dist_penalty_type uniform --actor_lr 0.00003 --min_z_weight 1 --lag 10.0 --entropy true --seed 0
 ```
 
 ## Citations

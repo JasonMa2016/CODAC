@@ -1,0 +1,74 @@
+{
+    "halfcheetah-random-v0": {
+    "min_z_weight": 1.0, 
+    "lag": 10.0,
+    "actor_lr": 0.00003,
+    "entropy": "true"
+    },  
+    "hopper-random-v0": {
+        "min_z_weight": 1.0, 
+        "lag": 10.0,
+        "actor_lr": 0.00003,
+        "entropy": "true"
+    },
+    "walker2d-random-v0": {
+        "min_z_weight": 1.0, 
+        "lag": 10.0,
+        "actor_lr": 0.00003,
+        "entropy": "true" 
+    },
+    "halfcheetah-medium-v0": {
+        "min_z_weight": 10.0, 
+        "lag": 10.0,
+        "actor_lr": 0.00003,
+        "entropy": "false"
+    },  
+    "hopper-medium-v0": {
+        "min_z_weight": 10.0, 
+        "lag": 10.0,
+        "actor_lr": 0.00003,
+        "entropy": "true"
+    },
+    "walker2d-medium-v0": {
+        "min_z_weight": 10.0, 
+        "lag": 10.0,
+        "actor_lr": 0.00003,
+        "entropy": "false" 
+    },
+    "halfcheetah-medium-replay-v0": {
+        "min_z_weight": 1.0, 
+        "lag": 10.0,
+        "actor_lr": 0.00003,
+        "entropy": "true"
+    },  
+    "hopper-medium-replay-v0": {
+        "min_z_weight": 1.0, 
+        "lag": 10.0,
+        "actor_lr": 0.00003,
+        "entropy": "true"
+    },
+    "walker2d-medium-replay-v0": {
+        "min_z_weight": 1.0, 
+        "lag": 10.0,
+        "actor_lr": 0.000003,
+        "entropy": "true" 
+    },
+    "halfcheetah-medium-expert-v0": {
+        "min_z_weight": 0.1, 
+        "lag": -1, 
+        "actor_lr": 0.0003,
+        "entropy": "false"
+    },  
+    "hopper-medium-expert-v0": {
+        "min_z_weight": 10.0, 
+        "lag": 10.0,
+        "actor_lr": 0.00003,
+        "entropy": "false"
+    },
+    "walker2d-medium-expert-v0": {
+        "min_z_weight": 10.0, 
+        "lag": 10.0,
+        "actor_lr": 0.00003,
+        "entropy": "false" 
+    }
+}
